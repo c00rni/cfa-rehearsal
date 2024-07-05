@@ -1,0 +1,13 @@
+# -- FILE: cfa-virtual-exam/pyproject.toml
+# SCHEMA: Use "behave" from git-repository (instead of: https://pypi.org/ )
+#   "behave @ git+https://github.com/behave/behave.git@<TAG>"
+#   "behave @ git+https://github.com/behave/behave.git@<BRANCH>"
+#   "behave[VARIANT] @ git+https://github.com/behave/behave.git@<TAG>" # with VARIANT=develop, docs, ...
+# SEE: https://peps.python.org/pep-0508/
+
+[project]
+name = "cfa-virtual-exam"
+dependencies = [
+    "behave @ git+https://github.com/behave/behave.git@v1.2.7.dev5",
+    # OR: "behave[develop] @ git+https://github.com/behave/behave.git@main",
+]
