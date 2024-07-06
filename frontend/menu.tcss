@@ -10,3 +10,42 @@ SideMenu {
 MainMenu {
 	dock:left;
 }
+
+/* Mock Exam */
+
+MockExam #topBar {
+	height: 3;
+	content-align: center middle;
+	padding: 1;
+}
+
+MockExam #topBar #progress {
+	layout: horizontal
+}
+
+MockExam #topBar #time {
+	layout: horizontal;
+	dock:right;
+}
+
+MockExam #topBar TimeDisplay {
+	width: 8;
+}
+
+MockExam {
+	content-align: center middle;
+}
+
+MockExam #questionSection {
+	align: center middle;
+}
+
+#question {
+	max-width: 100;
+	padding: 3;
+}
+
+#question OptionList {
+	margin: 1;
+}
+

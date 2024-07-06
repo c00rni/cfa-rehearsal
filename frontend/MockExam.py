@@ -1,7 +1,7 @@
 from textual.app import ComposeResult
-from textual.widgets import Button, Label, ProgressBar, Markdown, OptionList
+from textual.widgets import Button, Label, ProgressBar, Markdown, OptionList, Static
 from textual.widgets.option_list import Option, Separator
-from textual.containers import VerticalScroll, Horizontal
+from textual.containers import VerticalScroll, Horizontal, Container, Middle, Center
 from TimeDisplay import TimeDisplay
 
 class MockExam(VerticalScroll):
@@ -20,19 +20,24 @@ This is an example of Textual's `Markdown` widget ?
    """
 
    def compose(self) -> ComposeResult:
-      with Horizontal():
-         yield Label("Prgress: ")
-         yield ProgressBar(total=180, show_eta=False)
-         yield TimeDisplay()
-      with VerticalScroll():
-         yield Markdown(self.markdown_text)
-         yield OptionList(
-            Option("A: Bonjour"),
-            Separator(),
-            Option("B: Aurevoire"),
-            Separator(),
-            Option("C: Merci"),
-         )
-         yield Button("Next question", variant="success")
+      with Horizontal(id="topBar"):
+         with Middle(id="progress"):
+            yield Label("Prgress: ")
+            yield ProgressBar(total=180, show_eta=False)
+         with Middle(id="time"):
+            yield Label("Time: ")
+            yield TimeDisplay()
 
+      with Static(id="questionSection"):
+         with VerticalScroll(id="question"):
+            yield Markdown(self.markdown_text)
+            yield OptionList(
+               Option("A: Bonjour"),
+               Separator(),
+               Option("B: Aurevoire"),
+               Separator(),
+               Option("C: Merci"),
+            )
+            with Center():
+               yield Button("Next question", variant="success", id="buttonNext")
 

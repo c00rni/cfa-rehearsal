@@ -17,8 +17,9 @@ class TimeDisplay(Static):
    def watch_time(self, time: float) -> None:
       minutes, seconds = divmod(time, 60)
       hours, minutes = divmod(minutes, 60)
+      hours = int(3 - hours)
       minutes = 59 if minutes == 0 else 59 - minutes
-      seconds = 60 - seconds
-      self.update(f"{int(hours)}:{minutes:02.0f}:{seconds:02.2f}")
+      seconds = int(60 - seconds)
+      self.update(f"{int(hours)}:{minutes:02.0f}:{seconds}")
 
 
