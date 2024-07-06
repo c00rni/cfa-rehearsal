@@ -1,0 +1,12 @@
+SideMenu {
+	content-align: center middle;
+	dock: left;
+}
+
+.examStarted {
+	display: none;
+}
+
+MainMenu {
+	dock:left;
+}
