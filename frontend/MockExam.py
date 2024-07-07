@@ -30,11 +30,15 @@ class MockExam(VerticalScroll):
       options.clear_options()
       options.add_options(candidates)
 
+      progress_bar = self.query_one("#progressBar")
+      progress_bar.advance(1)
+
+
    def compose(self) -> ComposeResult:
       with Horizontal(id="topBar"):
          with Middle(id="progress"):
             yield Label("Prgress: ")
-            yield ProgressBar(total=len(self.questions), show_eta=False)
+            yield ProgressBar(total=len(self.questions), show_eta=False, id="progressBar")
          with Middle(id="time"):
             yield Label("Time: ")
             yield TimeDisplay()
