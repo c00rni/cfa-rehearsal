@@ -20,7 +20,8 @@ class CfaPrepApp(App):
 
    def action_launch_exam(self) -> None:
       """Called to start a full cfa mock exams """
-      new_exam = MockExam([["""
+      new_exam = MockExam([{
+         "statement": """
 This is an example of Textual's `Markdown` widget ?
 
 | Aligné à gauche  | Centré          | Aligné à droite |
@@ -28,7 +29,21 @@ This is an example of Textual's `Markdown` widget ?
 | Aligné à gauche  |   ce texte        |  Aligné à droite |
 | Aligné à gauche  | est             |   Aligné à droite |
 | Aligné à gauche  | centré          |    Aligné à droite |
-   """, ["Bonjour","Merci","Aurevoir"], 0],["La seconde lettre de l'alphabet ?", ["A","B","C"], 1]])
+   """,
+         "candidates": ["Bonjour","Merci","Aurevoir"],
+         "awnser": 0,
+         "difficulty_level": 0,
+         "cfa_level":1,
+         "topic": 0},
+         {
+            "statement": "La seconde lettre de l'alphabet ?",
+            "candidates": ["A","B","C"],
+            "awnser": 0,
+            "difficulty_level": 0,
+            "cfa_level":1,
+            "topic": 0
+         },
+      ])
       self.query_one("#screen").mount(new_exam)
 
    def action_stop_exam(self) -> None:

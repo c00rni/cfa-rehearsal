@@ -49,3 +49,28 @@ MockExam #questionSection {
 	margin: 1;
 }
 
+ExamScore {
+	dock: left;
+}
+
+#examEnded #topBar {
+	display: none;
+}
+
+.examEnded #questionSection {
+	display: none;
+}
+
+#scoreScreen {
+	display: none;
+}
+
+.examEnded #scoreScreen {
+	display: block;
+}
+
+.examEnded #scoreTable {
+	align: center middle;
+	width: auto;
+}
+
