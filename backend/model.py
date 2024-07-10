@@ -1,7 +1,7 @@
 from pymongo import MongoClient, InsertOne
 from dotenv import dotenv_values
 import logging
-from data import data 
+from backend.data import data
 
 config = dotenv_values(".env")
 
@@ -79,4 +79,8 @@ print(results)
 # InsertOne
 responses = ["Hello", "Aurevoir", "Salut"]
 model.insertQuestion("What is CFA ?", responses, 0, 0, 1, 0)
+
+#Get data
+model = Model(config["MONGODB_PWD"], "corni")
+print(list(model.db.questions.find({})))
 """

@@ -2,17 +2,19 @@ from textual.app import ComposeResult
 from textual.widgets import Button, Label, ProgressBar, Markdown, OptionList, Static, DataTable
 from textual.widgets.option_list import Option, Separator
 from textual.containers import VerticalScroll, Horizontal, Container, Middle, Center, ScrollableContainer
-from TimeDisplay import TimeDisplay
+from frontend.TimeDisplay import TimeDisplay
 from textual.reactive import reactive
+from dotenv import dotenv_values
+from backend.model import Model
+
+config = dotenv_values(".env")
 
 class MockExam(VerticalScroll):
    """ Custom widget for Questions of a full mock exam """
 
    curr_question_index = reactive(0)
-
-   def __init__(self, questions):
-      super().__init__()
-      self.questions = questions
+   model = Model(config["MONGODB_PWD"], "corni")
+   questions = list(model.db.questions.find({}))
 
    def on_button_pressed(self, event: Button.Pressed) -> None:
       if event.button.id == "buttonNext":
