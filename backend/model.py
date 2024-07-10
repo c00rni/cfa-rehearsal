@@ -1,6 +1,7 @@
-from pymongo import MongoClient
+from pymongo import MongoClient, InsertOne
 from dotenv import dotenv_values
 import logging
+from data import data 
 
 config = dotenv_values(".env")
 
@@ -69,7 +70,13 @@ class Model:
          logging.error("The question couldn't be created.")
 
 """
+#Insert many
 model = Model(config["MONGODB_PWD"], "corni")
+operations = [InsertOne(item) for item in data["items"]]
+results = model.db.questions.bulk_write(operations)
+print(results)
+
+# InsertOne
 responses = ["Hello", "Aurevoir", "Salut"]
 model.insertQuestion("What is CFA ?", responses, 0, 0, 1, 0)
 """
