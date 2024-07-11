@@ -2,7 +2,6 @@
 
 A simple Chartered Financial Analyst (CFA) mock exams generator.
 
-screenshot.jpg
 ![Screenshot of an exam questions](screenshot.png)
 
 ## Installation
