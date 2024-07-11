@@ -62,12 +62,12 @@ data = {"items" : [
 | 2 |  150,000 |
 | 3 | -10,000 |
 		""",
-		"candidates": ["A. ","B. ","C. "],
+		"candidates": ["A. €201,747.","B. 203,191.","C. 227,573."],
 		"awnser": 0,
 		"difficulty_level": 0,
 		"cfa_level": 1,
 		"topic": 0
-	},
+	}, 
 	{
 		"statement":"Grandparents are funding a newborn's future university tuition cost, estimated at $50,000/year for four years, with the first payment due as a lump sum in 18 years. Assumming a 6% effective annual rate, the required deposit today is closest to:",
 		"candidates": ["A. $60,699.","B. $64,341.","C. $68,201."],
@@ -478,7 +478,8 @@ data = {"items" : [
 |  | 123.80 | 7 |
 |  | 124.10 | 6 |
 |  | 124.50 | 7 |
-A new buy limit orger is placed for 300 shares at €123.40. This limit orger is said to:
+
+A new buy limit order is placed for 300 shares at €123.40. This limit order is said to:
 		""",
 		"candidates": ["A. take the market.","B. make the market.","C. make a new market."],
 		"awnser": 2,

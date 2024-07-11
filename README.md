@@ -1,29 +1,31 @@
 # CFA virtual exam
 
-Test your knowledge of CFA level 1 curriculum with a virutla test.
+A simple Chartered Financial Analyst (CFA) mock exams generator.
 
+screenshot.jpg
+![Screenshot of an exam questions](screenshot.png)
 
-## Tech stack
+## Installation
 
--   Mongodb
--   Python libraries for text based games
--   Gherking
+The application use python and an a mongodb database.
 
-### TUI
+```
+python3 --version # Verify that python is install
+pip install textual
+pip install pymongo
+```
 
-https://calmcode.io/course/rich/introduction
-https://rich.readthedocs.io/en/latest/
-https://github.com/textualize/rich-cli
+Create a `.env` file that contains credentials to the mongodb.
 
-https://www.youtube.com/playlist?list=PLHhDR_Q5Me1MxO4LmfzMNNQyKfwa275Qe
-https://textual.textualize.io/
+```
+#.env
+MONGODB_PWD=<YOUR_PASSWORD>
+MONGODB_USERNAME=<YOUR_USERNAME>
+```
 
-### Mondodb client
+Optionally: A question sample can be load to the data base. by executing `python3 backend/model.py` from the root directory.
 
-https://www.mongodb.com/fr-fr/resources/languages/python
+## References 
 
-### CFA 
-
-https://www.cfainstitute.org/en/programs/cfa/exam/level-i
-https://www.youtube.com/watch?v=-ySpuPMzfz0
-https://www.cfainstitute.org/programs/cfa/curriculum/study-tips
+[CFA Level 1 exam structure](https://www.cfainstitute.org/en/programs/cfa/exam/level-i)
+[CFA curriculum](https://www.cfainstitute.org/programs/cfa/curriculum/study-tips)

@@ -69,11 +69,11 @@ class Model:
       except:
          logging.error("The question couldn't be created.")
 
-"""
 #Insert many
-model = Model(config["MONGODB_PWD"], "corni")
+model = Model(config["MONGODB_PWD"], config["MONGODB_USERNAME"])
 operations = [InsertOne(item) for item in data["items"]]
 results = model.db.questions.bulk_write(operations)
+"""
 print(results)
 
 # InsertOne
